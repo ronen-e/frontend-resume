@@ -1,29 +1,33 @@
-var model = null, octopus = null;
+/*
+*  TODO
+*  namespace
+*  bundle - Webpack
+*  minify -- done
+*  ES2015
+*  translations support
+*  React
+*  Redux
+*  express - heroku deploy
+*  DB - mongodb / redis
+*  replace jQuery with a lighter library e.g zepto, dom
+*/
 
-var educationView = {
-    init: function() {
-        this.$element = $('#education');
-        this.schoolsTemplate = tmpl('education_schools_template');
-        this.onlineCoursesTemplate = tmpl('education_onlineCourses_template');
-        this.render();
-    },
-    render: function() {
-        var education = octopus.getEducation();
-        this.$element.append(this.schoolsTemplate(education));
-        this.$element.append(this.onlineCoursesTemplate(education));
-    }
-};
+var model = null;
 
-view = {
+var view = {
     bio: bioView,
     work: workView,
     projects: projectsView,
     education: educationView,
+    map: mapView,
+    letsConnect: letsConnectView,
     init: function() {
         this.bio.init();
         this.work.init();
         this.projects.init();
         this.education.init();
+        this.map.init();
+        this.letsConnect.init();
     }
 };
 
@@ -47,11 +51,27 @@ var octopus = {
 };
 
 function main() {
-     $.getJSON('./data.json').done(initialize);
- }
+     $.getJSON('./data.json').done(function initialize(appData) {
+         octopus.init(appData);
+         hideEmptySections();
 
-function initialize(data) {
-     octopus.init(data);
- }
+         // Calls the initializeMap() function when the page loads
+         try {
+             initializeMap();
+             // Vanilla JS way to listen for resizing of the window
+             // and adjust map bounds
+             window.addEventListener('resize', function(e) {
+                 // Make sure the map bounds get updated on page resize
+                 map.fitBounds(mapBounds);
+             });
 
-main();
+             // logs clicks on page
+             jQuery(document).click(function(event) {
+                 logClicks(event.pageX, event.pageY);
+             });
+
+         } catch(e) {
+             console.warn('main Error:', e);
+         }
+     });
+}

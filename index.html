@@ -9,6 +9,13 @@
     <title>Resume</title>
     <link href="css/style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/favicon/adventurer-hat-152-2864.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/favicon/adventurer-hat-144-2864.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/images/favicon/adventurer-hat-120-2864.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/favicon/adventurer-hat-114-2864.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/favicon/adventurer-hat-72-2864.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/favicon/adventurer-hat-57-2864.png">
+    <link rel="icon" href="/images/favicon/adventurer-hat-16-2864.png">
 </head>
 <body>
     <script type="text/html" id="work_template">
@@ -22,7 +29,7 @@
       <% } %>
     </script>
     <script type="text/html" id="projects_template">
-      <% for ( var i = 0; i < 1; i++ ) { %>
+      <% for ( var i = 0; i < projects.length; i++ ) { %>
           <div class="project-entry">
               <a href="#"><%= projects[i].title %></a>
               <div class="date-text"><%= projects[i].dates %></div>
@@ -34,7 +41,7 @@
       <% } %>
     </script>
     <script type="text/html" id="education_schools_template">
-      <% for ( var i = 0; i < 1; i++ ) { %>
+      <% for ( var i = 0; i < schools.length; i++ ) { %>
           <div class="education-entry">
               <a href="#"><%= schools[i].name %> -- <%= schools[i].degree %></a>
               <div class="date-text"><%= schools[i].dates %></div>
@@ -49,88 +56,42 @@
           <div class="education-entry">
               <a href="<%= onlineCourses[i].url %>"><%= onlineCourses[i].title %> -- <%= onlineCourses[i].school %></a>
               <div class="date-text"><%= onlineCourses[i].date %></div>
-              <br><a href="<%= onlineCourses[i].url %>"><%= onlineCourses[i].url %></a>
+              <br>
           </div>
         <% } %>
     </script>
 
-  <div id="main">
-    <div id="header" class="center-content clear-fix">
-        <h1 id="name"></h1>
-        <span id="role"></span><hr>
-        <ul id="topContacts" class="flex-box"></ul>
-        <img id="profileImage" class="biopic">
-        <span id="welcomeMessage" class="welcome-message"></span>
-        <h3 id="skills-h3">Skills at a Glance:</h3>
-        <ul id="skills" class="flex-box"></ul>
-    </div>
-    <div style="clear: both;"></div>
-    <div id="workExperience" class="gray">
-      <h2>Work Experience</h2>
-    </div>
-    <div id="projects">
-      <h2>Projects</h2>
-    </div>
-    <div id="education" class="gray">
-      <h2>Education</h2>
-    </div>
-    <div id="mapDiv">
-      <h2>Where I've Lived and Worked</h2>
-    </div>
-    <div id="lets-connect" class="dark-gray">
-      <h2 class="orange center-text">Let's Connect</h2>
-        <ul id="footerContacts" class="flex-box">
-      </ul>
-    </div>
-  </div>
-  <script src="js/vendor/jQuery.js"></script>
-  <script src="js/vendor/tmpl.js"></script>
-  <script src="js/helper.js"></script>
-  <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
+    <div id="main">
+        <div id="header" class="center-content clear-fix">
+            <h1 id="name"></h1>
+            <span id="role"></span><hr>
+            <ul id="topContacts" class="flex-box"></ul>
+            <img id="profileImage" class="biopic">
+            <span id="welcomeMessage" class="welcome-message"></span>
+            <h3 id="skills-h3">Skills at a Glance:</h3>
+            <ul id="skills" class="flex-box"></ul>
+        </div>
+        <div style="clear: both;"></div>
+        <div id="workExperience" class="gray">
+            <h2>Work Experience</h2>
+        </div>
+        <div id="projects">
+            <h2>Projects</h2>
+        </div>
+        <div id="education" class="gray">
+            <h2>Education</h2>
+        </div>
+        <div id="mapDiv">
+            <h2>Where I've Lived and Worked</h2>
+        </div>
+        <div id="lets-connect" class="dark-gray">
+            <h2 class="orange center-text">Let's Connect</h2>
+            <ul id="footerContacts" class="flex-box">
+            </ul>
+        </div>
 
-  <script src="js/views/contacts.js"></script>
-  <script src="js/views/skills.js"></script>
-  <script src="js/views/bio.js"></script>
-  <script src="js/views/work.js"></script>
-  <script src="js/views/projects.js"></script>
+    </div>
 
-  <script src="js/resumeBuilder.js"></script>
-  <script type="text/javascript">
-    var sections = [
-        ['.flex-item', '#topContacts, #lets-connect'],
-        ['h1', '#header'],
-        ['.work-entry', '#workExperience'],
-        ['.project-entry', '#projects'],
-        ['.education-entry', '#education'],
-        ['#map', '#mapDiv']
-    ];
-
-    sections.forEach(function(section) {
-        if ($(section[0]).length === 0) {
-            //$(section[1]).hide();
-        }
-    });
-    // if(document.getElementsByClassName('flex-item').length === 0) {
-    //   document.getElementById('topContacts').style.display = 'none';
-    // }
-    // if(document.getElementsByTagName('h1').length === 0) {
-    //   document.getElementById('header').style.display = 'none';
-    // }
-    // if(document.getElementsByClassName('work-entry').length === 0) {
-    //   document.getElementById('workExperience').style.display = 'none';
-    // }
-    // if(document.getElementsByClassName('project-entry').length === 0) {
-    //   document.getElementById('projects').style.display = 'none';
-    // }
-    // if(document.getElementsByClassName('education-entry').length === 0) {
-    //   document.getElementById('education').style.display = 'none';
-    // }
-    // if(document.getElementsByClassName('flex-item').length === 0) {
-    //   document.getElementById('lets-connect').style.display = 'none';
-    // }
-    // if(document.getElementById('map') === null) {
-    //   document.getElementById('mapDiv').style.display = 'none';
-    // }
-  </script>
+    <script data-main="js/main" src="js/vendor/require.js"></script>
 </body>
 </html>
