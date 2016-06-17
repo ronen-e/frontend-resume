@@ -21,6 +21,7 @@ var view = {
     education: educationView,
     map: mapView,
     internationalizeButtonView: internationalizeButtonView,
+    letsConnect: letsConnectView,
     init: function() {
         this.bio.init();
         this.work.init();
@@ -28,6 +29,7 @@ var view = {
         this.education.init();
         this.map.init();
         this.internationalizeButtonView.init();
+        this.letsConnect.init();
     }
 };
 
