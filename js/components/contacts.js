@@ -1,4 +1,5 @@
 function ContactsView ($element) {
+    console.log('element', $element);
     this.$element = $element;
 }
 ContactsView.prototype.getHTML = function(type, value) {
