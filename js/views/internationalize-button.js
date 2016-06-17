@@ -7,7 +7,7 @@ var internationalizeButtonView = {
         var $name = $('#name');
         var text = $name.text();
         var iName = inName(text);
-        $name.html(iName);
+        $name.text(iName);
     },
     render: function() {
         var $el = this.$element;
