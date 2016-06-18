@@ -154,13 +154,6 @@
         ]
     },
     "projects": {
-        "projects": [
-            {
-                "title": "",
-                "dates": "",
-                "description": "",
-                "images": []
-            }
-        ]
+        "projects": []
     }
 }
