@@ -28,7 +28,7 @@
                 "location": "Tel Aviv, Israel",
                 "degree": "Certificate",
                 "majors": ["ASP.NET", "JAVA"],
-                "dates": "2010",
+                "dates": "2009-2011",
                 "url": "http://hackeru.co.il"
             }
         ],
@@ -156,10 +156,10 @@
     "projects": {
         "projects": [
             {
-                "title": "Lorum ipsum",
-                "dates": "2015-2016",
-                "description": "some description",
-                "images": ["./images/fry.jpg", "./images/profile_photo_ruby.png"]
+                "title": "",
+                "dates": "",
+                "description": "",
+                "images": []
             }
         ]
     }
