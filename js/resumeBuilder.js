@@ -56,7 +56,24 @@ function main() {
      $.getJSON('./data.json').done(function initialize(appData) {
          octopus.init(appData);
          hideEmptySections();
+
+         // Calls the initializeMap() function when the page loads
+         try {
+             initializeMap();
+             // Vanilla JS way to listen for resizing of the window
+             // and adjust map bounds
+             window.addEventListener('resize', function(e) {
+                 // Make sure the map bounds get updated on page resize
+                 map.fitBounds(mapBounds);
+             });
+
+             // logs clicks on page
+             jQuery(document).click(function(event) {
+                 logClicks(event.pageX, event.pageY);
+             });
+
+         } catch(e) {
+             console.error('main Error:', e);
+         }
      });
 }
-
-main();

@@ -21,12 +21,6 @@ function logClicks(x,y) {
   console.log('x location: ' + x + '; y location: ' + y);
 }
 
-$(document).click(function(event) {
-  // your code goes here!
-  logClicks(event.pageX, event.pageY);
-});
-
-
 
 /*
 This is the fun part. Here's where we generate the custom Google Map for the website.
@@ -170,25 +164,6 @@ function initializeMap() {
 
 }
 
-/*
-Uncomment the code below when you're ready to implement a Google Map!
-*/
-
-// Calls the initializeMap() function when the page loads
-window.addEventListener('load', function() {
-        try {
-            initializeMap();
-        } catch(e) {
-            console.log('Map Error:', e);
-        }
-});
-
-// Vanilla JS way to listen for resizing of the window
-// and adjust map bounds
-window.addEventListener('resize', function(e) {
-  // Make sure the map bounds get updated on page resize
- map.fitBounds(mapBounds);
-});
 
 function hideEmptySections() {
     var $section, $item, shouldShow;
