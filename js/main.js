@@ -20,7 +20,6 @@ requirejs([
     'views/components/contacts',
     'views/components/skills',
     'views/map',
-    'views/internationalize-button',
     'views/bio',
     'views/work',
     'views/projects',
