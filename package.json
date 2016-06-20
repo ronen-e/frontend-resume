@@ -1,39 +1,43 @@
 {
-  "name": "frontend-resume",
-  "version": "1.0.0",
-  "description": "My resume",
-  "main": "app/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ronen-e/frontend-resume.git"
-  },
-  "keywords": [
-    "resume",
-    "cv"
-  ],
-  "author": "Ronen Elster <alter.ronen@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ronen-e/frontend-resume/issues"
-  },
-  "homepage": "https://github.com/ronen-e/frontend-resume#readme",
-  "devDependencies": {
-    "babel": "^6.5.2",
-    "babel-cli": "^6.10.1",
-    "babel-preset-es2015": "^6.9.0",
-    "browserify": "^13.0.1",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.5.3",
-    "jquery": "^3.0.0",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
-  },
-  "dependencies": {
-    "babel-core": "^6.1.21"
-  }
+    "name": "frontend-resume",
+    "version": "1.0.0",
+    "description": "My resume",
+    "main": "app/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ronen-e/frontend-resume.git"
+    },
+    "keywords": [
+        "resume",
+        "cv"
+    ],
+    "author": "Ronen Elster <alter.ronen@gmail.com>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ronen-e/frontend-resume/issues"
+    },
+    "homepage": "https://github.com/ronen-e/frontend-resume#readme",
+    "devDependencies": {
+        "babel": "^6.5.2",
+        "babel-cli": "^6.10.1",
+        "babel-preset-es2015": "^6.9.0",
+        "browserify": "^13.0.1",
+        "gulp": "^3.9.1",
+        "gulp-concat": "^2.6.0",
+        "gulp-sourcemaps": "^1.6.0",
+        "gulp-uglify": "^1.5.3",
+        "jquery": "^3.0.0",
+        "vinyl-buffer": "^1.0.0",
+        "vinyl-source-stream": "^1.1.0"
+    },
+    "dependencies": {
+        "babel-core": "^6.1.21"
+    },
+    "optionalDependencies": {
+        "frontend-resume": "1.0.0",
+        "app": "1.0.0"
+    }
 }
