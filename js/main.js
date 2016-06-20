@@ -13,19 +13,8 @@ requirejs.config({
 
 // Start the main app logic.
 requirejs([
-    'vendor/jQuery',
-    'vendor/tmpl',
-    'helper',
     '//maps.googleapis.com/maps/api/js?libraries=places',
-    'views/components/contacts',
-    'views/components/skills',
-    'views/map',
-    'views/bio',
-    'views/work',
-    'views/projects',
-    'views/education',
-    'views/lets-connect',
-    'resumeBuilder',
+    './bundle.js',
 ], function() {
     main();
 });
