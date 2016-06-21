@@ -71,7 +71,7 @@ function main() {
              });
 
          } catch(e) {
-             console.error('main Error:', e);
+             console.warn('main Error:', e);
          }
      });
 }
