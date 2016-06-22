@@ -2,7 +2,7 @@
 *  TODO
 *  namespace
 *  bundle - Webpack
-*  minify
+*  minify -- done
 *  ES2015
 *  translations support
 *  React
@@ -20,7 +20,6 @@ var view = {
     projects: projectsView,
     education: educationView,
     map: mapView,
-    internationalizeButtonView: internationalizeButtonView,
     letsConnect: letsConnectView,
     init: function() {
         this.bio.init();
@@ -28,7 +27,6 @@ var view = {
         this.projects.init();
         this.education.init();
         this.map.init();
-        this.internationalizeButtonView.init();
         this.letsConnect.init();
     }
 };
@@ -73,7 +71,7 @@ function main() {
              });
 
          } catch(e) {
-             console.error('main Error:', e);
+             console.warn('main Error:', e);
          }
      });
 }
