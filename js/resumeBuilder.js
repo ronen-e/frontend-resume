@@ -2,7 +2,7 @@
 *  TODO
 *  namespace
 *  bundle - Webpack
-*  minify
+*  minify -- done
 *  ES2015
 *  translations support
 *  React
